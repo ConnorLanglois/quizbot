@@ -1,0 +1,5 @@
+Array.from(document.getElementsByClassName('vtbegenerated inlineVtbegenerated')).map(div => {
+	const p = div.querySelectorAll('p');
+	
+	return p[Math.max(0, p.length - 2)].textContent;
+}).reduce((accumulator, currentValue, currentIndex, array) => accumulator + currentValue + (currentIndex != array.length - 1 ? '\r\n\r\n' : ''), '');
